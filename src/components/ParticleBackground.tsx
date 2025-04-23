@@ -12,8 +12,9 @@ class Particle {
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;
-    this.vx = (Math.random() - 0.5) * 2;
-    this.vy = (Math.random() - 0.5) * 2;
+    // Increase velocity by 1.5x
+    this.vx = (Math.random() - 0.5) * 3;
+    this.vy = (Math.random() - 0.5) * 3;
     this.radius = Math.random() * 2 + 1;
     
     const colors = ['#4158D0', '#C850C0', '#FFCC70'];
@@ -55,7 +56,8 @@ export const ParticleBackground: React.FC = () => {
     };
 
     const createParticles = () => {
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+      // Double the particle count
+      const particleCount = Math.floor((canvas.width * canvas.height) / 7500);
       for (let i = 0; i < particleCount; i++) {
         particles.push(
           new Particle(

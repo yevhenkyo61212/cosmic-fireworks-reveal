@@ -5,11 +5,12 @@ import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import TimelineSection from '@/components/TimelineSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import ContactSection from '@/components/ContactSection';
 import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-background to-background/50 dark:from-zinc-900 dark:to-zinc-950">
       <ParticleBackground />
       <Navigation />
       
@@ -24,7 +25,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#4158D0] via-[#C850C0] to-[#FFCC70] bg-clip-text text-transparent">
             WebGL & Blockchain & AI Developer
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8">
+          <p className="text-xl md:text-2xl text-foreground/80 mb-8">
             Building the future with cutting-edge technology
           </p>
           <a
@@ -65,11 +66,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* New Sections */}
+      {/* Other Sections */}
       <SkillsSection />
       <ProjectsSection />
       <TimelineSection />
       <TestimonialsSection />
+      <ContactSection />
     </div>
   );
 };
