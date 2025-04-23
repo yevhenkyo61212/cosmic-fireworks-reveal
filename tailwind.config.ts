@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -55,9 +54,9 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #4158D0 0%, #C850C0 46.35%, #FFCC70 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)',
-        'gradient-tertiary': 'linear-gradient(135deg, #FAD961 0%, #F76B1C 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #33C3F0 0%, #1EAEDB 46.35%, #F2FCE2 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #FEC6A1 0%, #F97316 50%, #FFDEE2 100%)',
+        'gradient-bright': 'linear-gradient(135deg, #FFFFFF 0%, #D3E4FD 50%, #E5DEFF 100%)',
       },
       keyframes: {
         "accordion-down": {
