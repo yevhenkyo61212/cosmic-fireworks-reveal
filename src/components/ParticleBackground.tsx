@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 class Particle {
@@ -12,12 +11,11 @@ class Particle {
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;
-    // Increase velocity by 1.5x
     this.vx = (Math.random() - 0.5) * 3;
     this.vy = (Math.random() - 0.5) * 3;
-    this.radius = Math.random() * 2 + 1;
+    this.radius = Math.random() * 1.5 + 0.5;
     
-    const colors = ['#4158D0', '#C850C0', '#FFCC70'];
+    const colors = ['#33C3F0', '#1EAEDB', '#F2FCE2', '#E5DEFF', '#D3E4FD'];
     this.color = colors[Math.floor(Math.random() * colors.length)];
   }
 
@@ -48,7 +46,6 @@ export const ParticleBackground: React.FC = () => {
     if (!ctx) return;
 
     const particles: Particle[] = [];
-    let animationFrameId: number;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -56,8 +53,7 @@ export const ParticleBackground: React.FC = () => {
     };
 
     const createParticles = () => {
-      // Double the particle count
-      const particleCount = Math.floor((canvas.width * canvas.height) / 7500);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 5000); // Increased density
       for (let i = 0; i < particleCount; i++) {
         particles.push(
           new Particle(
@@ -74,7 +70,7 @@ export const ParticleBackground: React.FC = () => {
         particle.update(canvas.width, canvas.height);
         particle.draw(ctx);
       });
-      animationFrameId = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
 
     resizeCanvas();
@@ -85,14 +81,13 @@ export const ParticleBackground: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-40"
     />
   );
 };
