@@ -1,7 +1,10 @@
-
 import React from 'react';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import Navigation from '@/components/Navigation';
+import SkillsSection from '@/components/SkillsSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import TimelineSection from '@/components/TimelineSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import { motion } from 'framer-motion';
 
 const Index = () => {
@@ -61,6 +64,12 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* New Sections */}
+      <SkillsSection />
+      <ProjectsSection />
+      <TimelineSection />
+      <TestimonialsSection />
     </div>
   );
 };
