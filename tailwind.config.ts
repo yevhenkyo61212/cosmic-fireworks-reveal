@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,10 +53,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        aurora: {
+          purple: "#9b87f5",
+          pink: "#D946EF",
+          blue: "#1A1F2C",
+          cyan: "#0EA5E9",
+        }
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #33C3F0 0%, #1EAEDB 46.35%, #F2FCE2 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #FEC6A1 0%, #F97316 50%, #FFDEE2 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #9b87f5 0%, #D946EF 46.35%, #0EA5E9 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #D946EF 0%, #9b87f5 50%, #0EA5E9 100%)',
+        'gradient-aurora': 'linear-gradient(135deg, #120e1e 0%, #1f1133 50%, #2a1758 100%)',
         'gradient-bright': 'linear-gradient(135deg, #FFFFFF 0%, #D3E4FD 50%, #E5DEFF 100%)',
       },
       keyframes: {
@@ -76,12 +84,18 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        aurora: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '100%': { backgroundPosition: '0% 0%' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         'float': 'float 6s ease-in-out infinite',
         'gradient': 'gradient 15s ease infinite',
+        'aurora': 'aurora 20s ease infinite',
       },
     },
   },

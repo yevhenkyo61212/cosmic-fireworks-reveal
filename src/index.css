@@ -6,24 +6,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 270 50% 98%;
     --card: 240 4.8% 95.9%;
     --card-foreground: 240 5.9% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 220 50% 50%; /* Bright Sky Blue */
+    --primary: 270 100% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 30 90% 60%; /* Bright Orange */
+    --secondary: 330 100% 60%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 220 50% 95%; /* Very Light Blue */
-    --muted-foreground: 220 50% 40%;
-    --accent: 290 90% 80%; /* Soft Purple */
+    --muted: 270 50% 95%;
+    --muted-foreground: 270 50% 40%;
+    --accent: 200 100% 60%;
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 50% 50%;
+    --border: 270 50% 80%;
+    --input: 270 50% 80%;
+    --ring: 270 100% 50%;
     --radius: 0.5rem;
   }
 }
@@ -34,16 +34,24 @@
   }
 
   body {
-    @apply bg-gradient-bright text-foreground antialiased;
+    @apply text-foreground antialiased bg-[#120e1e];
   }
 }
 
 @layer utilities {
-  .bright-gradient {
-    @apply bg-gradient-bright text-foreground;
+  .aurora-text {
+    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent;
   }
 
-  .bright-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:brightness-110;
+  .aurora-border {
+    @apply border border-purple-500/50 shadow-[0_0_15px_rgba(155,89,182,0.5)];
+  }
+
+  .aurora-glow {
+    @apply shadow-[0_0_20px_rgba(155,89,182,0.6)];
+  }
+
+  .aurora-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(155,89,182,0.7)];
   }
 }
